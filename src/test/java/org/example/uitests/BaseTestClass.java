@@ -1,6 +1,5 @@
 package org.example.uitests;
 
-import org.example.uitests.driver.WebDriverFactory;
 import org.example.uitests.driver.WebDriverFactory3;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;

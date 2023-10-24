@@ -28,3 +28,18 @@ public class WebDriverHolder {
         }
     }
 }
+
+// Basic view of "Single tone" pattern
+
+//public class WebDriverHolder {
+//    private static WebDriverHolder instance = null;
+//
+//    WebDriverHolder() {
+//    }
+//
+//    public static WebDriverHolder getInstance() {
+//        if (instance == null) {
+//            instance = new WebDriverHolder();
+//        }
+//        return instance;
+//    }

@@ -17,9 +17,7 @@ public class WaitersTests extends BaseTestClass {
     public void waiterTest() {
         WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
-//        driver.get(ConfigProvider.BASE_URL);
         driver.get(ConfigProvider.getInstance().getProperty("base.url"));
-
         driver.findElement(By.id("start")).findElement(By.xpath(".//button")).click();
 
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("loading")));

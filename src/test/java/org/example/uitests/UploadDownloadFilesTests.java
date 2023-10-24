@@ -4,11 +4,11 @@ import org.example.uitests.utils.MyFilesUtils;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import java.io.File;
 import java.io.IOException;
 
 public class UploadDownloadFilesTests extends BaseTestClassUseProperties {
+
     @Test
     public void uploadTest() throws IOException {
         File file = MyFilesUtils.generateLoremFile();
@@ -35,8 +35,7 @@ public class UploadDownloadFilesTests extends BaseTestClassUseProperties {
 
         goToPart("download");
         driver.findElement(By.linkText(file.getName())).click();
-
-        File file1 = MyFilesUtils.waitTillFileIsLoaded(new File("C:\\Users\\Olena_Klymenko1\\Downloads", file.getName()));
+        File file1 = MyFilesUtils.waitTillFileIsLoaded(new File("/Users/dmytro/Downloads", file.getName()));
 
         Assert.assertEquals(file.length(), file1.length());
 
