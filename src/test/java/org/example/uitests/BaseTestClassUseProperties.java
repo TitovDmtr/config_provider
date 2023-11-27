@@ -33,14 +33,10 @@ public class BaseTestClassUseProperties {
     }
 
     public void goToUrl() {
-        goToUrl(ConfigProvider.getInstance().getProperty("app.base.url"));
+        goToUrl(ConfigProvider.getInstance().getProperty("demo.seleniumeasy.url"));
     }
 
     public void goToPart(String part) {
         goToUrl(ConfigProvider.getInstance().getProperty("app.base.url") + part);
     }
-
-//    public static void main(String[] args) {
-//        System.getProperties().forEach((k, v) -> System.out.println(k + "   " + v));
-//    }
 }

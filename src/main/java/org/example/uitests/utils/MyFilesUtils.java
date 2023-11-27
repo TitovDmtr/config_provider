@@ -11,7 +11,7 @@ import java.util.List;
 public class MyFilesUtils {
     public static File generateLoremFile() throws IOException {
         Faker faker = new Faker();
-        List<String> words = faker.lorem().words(100);
+        List<String> words = faker.lorem().words(20);
         File generatedFile = new File("files", RandomStringUtils.randomAlphabetic(10) + ".txt");
         FileUtils.writeLines(generatedFile, words);
         return generatedFile;

@@ -13,23 +13,22 @@ public class Titov_HW18_CompareTwoFilesTest extends BaseTestClassUseProperties{
 
     @Test
     public void compareTwoFilesTest () throws IOException, InterruptedException {
-        File localFile = new File("files/HW18_lorem.txt");
-        String dataFromLocalFile = FileUtils.readFileToString(localFile, "UTF-8");
-
-        driver.get("https://demo.seleniumeasy.com/generate-file-to-download-demo.html");
-
+        File localFile = MyFilesUtils.generateLoremFile();
+        goToUrl();
         WebElement inputField = driver.findElement(By.id("textbox"));
         inputField.clear();
-        inputField.sendKeys(dataFromLocalFile);
 
+        String dataFromLocalFile = FileUtils.readFileToString(localFile, "UTF-8");
+        driver.findElement(By.id("textbox")).sendKeys(dataFromLocalFile);
         driver.findElement(By.id("create")).click();
-//        //wiiter
+
         driver.findElement(By.id("link-to-download")).click();
         File downloadedFile = MyFilesUtils.waitTillFileIsLoaded(new File("/Users/dmytro/Downloads", "easyinfo.txt")); //website always generate file with this filename
         String dataFromDownloadedFile = FileUtils.readFileToString(downloadedFile, "UTF-8");
 
         Assert.assertEquals(dataFromLocalFile, dataFromDownloadedFile);
 
+        localFile.deleteOnExit();
         downloadedFile.deleteOnExit();
     }
 }
