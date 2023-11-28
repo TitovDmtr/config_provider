@@ -16,10 +16,6 @@ public class BaseTestClassUseProperties {
         driver = WebDriverHolder.getInstance().getDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
-//        WebDriverHolder.getInstance().getDriver();
-//        WebDriverHolder.getInstance().getDriver().manage().window().maximize();
-//        WebDriverHolder.getInstance().getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     @AfterClass
@@ -28,7 +24,6 @@ public class BaseTestClassUseProperties {
     }
 
     public void goToUrl(String url) {
- //       driver.get(url);
         WebDriverHolder.getInstance().getDriver().get(url);
     }
 
